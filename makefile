@@ -1,6 +1,6 @@
 CC = g++
 FLAGS = -lgmpxx -lgmp
-STD = -std=c++11
+STD = 
 OPTIM = -mtune=native -march=native -flto -O3
 PROGRAM = isprime
 
