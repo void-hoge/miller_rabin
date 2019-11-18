@@ -68,7 +68,7 @@ int main(const int argc, const char *argv[]){
 			}else{
 				inc = 1;
 			}
-			for (int i = 0; i < std::abs(count); n+=inc){
+			for (int i = 0; i < abs(count); n+=inc){
 				if (n < 2 && inc < 0)break;
 				if (primality(n)){
 					std::cout << n << std::endl;
