@@ -1,5 +1,5 @@
 CC = g++
-FLAGS = -lgmpxx -lgmp -static
+FLAGS = -lgmpxx -lgmp
 STD =
 OPTIM = -mtune=native -march=native -flto -O3
 PROGRAM = isprime
