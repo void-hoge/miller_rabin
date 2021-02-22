@@ -11,8 +11,13 @@ int main(const int argc, const char *argv[]){
 			mpz_set_str(n.get_mpz_t(), argv[1], base);
 			if (n <= 1) {
 				std::cout << "not prime" << '\n';
+				return 1;
 			}else if (primality(n)){
+				std::cout << "prime" << '\n';
+				return 0;
+			}else {
 				std::cout << "composite" << '\n';
+				return 2;
 			}
 			break;
 		}
