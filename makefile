@@ -1,15 +1,14 @@
-CC = g++
-FLAGS = -lgmpxx -lgmp
-STD =
-OPTIM = -mtune=native -march=native -flto -O3
-PROGRAM = isprime
+CC = clang++
+PROG = isprime
+FLAG = -lgmp -lgmpxx
+STD = -std=c++11
+OPTIM = -O2 -mtune=native -march=native
 
-$(PROGRAM).out: main.cpp
-	$(CC) main.cpp $(FLAGS) $(STD) $(OPTIM) -o $(PROGRAM).out
+$(PROG).out: main.cpp miller_rabin.cpp
+	$(CC) main.cpp miller_rabin.cpp $(FLAG) $(STD) $(OPTIM) -o $(PROG).out
 
-run:
-	./$(PROGRAM).out 531137992816767098689588206552468627329593117727031923199444138200403559860852242739162502265229285668889329486246501015346579337652707239409519978766587351943831270835393219031728127 10
+test: $(PROG).out
+	./$(PROG).out 3918277498164613871680731263797 3
 
 clean:
-	rm *.out
-	rm *.o
+	rm *.out || rm *.o
